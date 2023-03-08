@@ -3,15 +3,10 @@ import { useSelector } from 'react-redux';
 import { useUser } from '../../hooks/useUser';
 import { Button } from '../button/Button';
 import './registration.css';
-import { useEffect, useState } from 'react';
 
 export const Registartion = () => {
     const { name, deposit, logo } = useSelector(state => state.user);
     const { handleChangeLogo, handleChange, handleStartBtn } = useUser();
-    const [error, setError] = useState({
-        inputName: false,
-        inputDeposit: false,
-    });
 
     return (
         <div className="app">
@@ -33,7 +28,7 @@ export const Registartion = () => {
                         <label htmlFor="inputName"></label>
                         <input 
                             required
-                            className={`input ${error.inputName ? 'error' : ''}`}
+                            className="input"
                             name="name"
                             type="text" 
                             id="inputName"
@@ -47,7 +42,7 @@ export const Registartion = () => {
                             required
                             min="1" 
                             step="1"
-                            className={`input ${error.inputDeposit ? 'error' : ''}`}
+                            className={`input ${ deposit <= 0 && deposit !== "" ? "error" : ""}`}
                             name="deposit"
                             type="number" 
                             id="inputDeposit"
@@ -60,7 +55,7 @@ export const Registartion = () => {
                         title={'Почати'} 
                         classBtn={"btn btnRegistration"} 
                         handleButton={handleStartBtn}
-                        // disabled={ deposit <= 0 || logo === null || name === "" || deposit === "" ? "disable" : null }
+                        disabled={ deposit <= 0 || logo === null || name === "" || deposit === "" ? "disable" : null }
                         
                         />
                     </form>

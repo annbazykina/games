@@ -42,7 +42,6 @@ export const userSlice = createSlice({
             state.result = state.result.concat(action.payload)
         },
         deleteAttempts: (state) => {
-            // state.result = state.result.concat(state.attempts)
             state.attempts = []
         },
         tryAgainGame: (state) => {
@@ -51,8 +50,8 @@ export const userSlice = createSlice({
             state.balance = ''
             state.logo = null
             state.attempts = []
+            state.sum = 0
             state.result = []
-    
         },
 
     }

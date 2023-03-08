@@ -17,5 +17,5 @@ export const UserStatus = () => {
             <div>{`Баланс ${balance}$`}</div>
             <Button title={'Заново'} classBtn={'btn btnAgain'} handleButton={handleAgainBtn}/>
         </div>
-    )
-}
+    );
+};

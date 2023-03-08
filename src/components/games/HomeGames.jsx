@@ -10,7 +10,7 @@ export const HomeGames = () => {
         <div className="homeGames">
             <div className="homeGamesItem">
             
-                <div className="title">Доступні ігри</div>
+                <h2 className="title">Доступні ігри</h2>
                 <div className="homeGamesItemChooseGame">
                     
                     {games.map((game) => 

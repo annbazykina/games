@@ -8,7 +8,7 @@ export const useNumber = () => {
     const winbet = +(bet * 10).toFixed(2);
     let random = Math.floor(Math.random() * 10) + 1;
     const result = +(winbet - bet).toFixed(2); 
-console.log('num')
+
     const handleRandomNumber = (num) => {
         
         dispatch(startGame(bet));
@@ -22,6 +22,5 @@ console.log('num')
             dispatch(addSumAttemts(-bet));
         };
     };
-
     return { handleRandomNumber };
-}
+};

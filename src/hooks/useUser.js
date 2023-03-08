@@ -3,17 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { addResult, deleteAttempts, setUserDeposit, setUserLogo, setUserName, tryAgainGame } from "../features/user/userSlice";
 import { games } from "../gamesData";
-import { useEffect } from "react";
 
 export const useUser = () => {
-    const { name, deposit, logo, balance, sum } = useSelector(state => state.user);
+    const { name, deposit, logo, sum } = useSelector(state => state.user);
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { gamePage } = useParams();
 
-    const currentGame = games.filter(game => 
-            game.id === gamePage).pop();
-
+    const currentGame = games.filter(game => game.id === gamePage).pop();
 
     const handleChange = (val) => {
         return (e) => {
@@ -41,23 +38,20 @@ export const useUser = () => {
 
     const handleBackToGames = () => {
         dispatch(addResult(`${currentGame.gameName}: ${sum}`))
-        navigate('/games');
         dispatch(deleteAttempts());
+        navigate('/games');
 
     };
-
 
     return { 
         name, 
         deposit, 
         logo, 
-        // error,
         handleChange, 
         handleChangeLogo, 
         handleStartBtn, 
         handleAgainBtn, 
         handleBackToGames, 
-        // handleWinorLose,
         
     };
 };

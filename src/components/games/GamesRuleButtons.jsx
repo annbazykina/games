@@ -37,8 +37,8 @@ export const GamesRuleButtons = ({currentPage}) => {
                         <Button 
                             title={"Спробувати"} 
                             classBtn={"btnRandomNum"} 
-                            handleButton={() => { handleRandomNumber(inputNumRef.current.value)}} 
-                            // disabled={ inputNumRef.current.value > 10 || inputNumRef.current.value <= 0 ? 'disabled' : null} 
+                            handleButton={() => { handleRandomNumber(inputNumRef.current.value) }} 
+                            // disabled={ inputNumRef.current.value > 10 || inputNumRef.current.value <= 0 ? 'disabled' : null}
                         />
                     </div>
                 :   
@@ -49,6 +49,6 @@ export const GamesRuleButtons = ({currentPage}) => {
                     </div>
             }
         </div>
-    )
+    );
 
 };
