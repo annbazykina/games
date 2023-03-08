@@ -1,0 +1,14 @@
+.layout {
+    width: 900px;
+    height: 700px;
+    border: 2px solid black;
+    /* background-image: url(./../../img/back1_compressed.jpg); */
+    /* background-size: cover; */
+    background: rgb(63,94,251);
+    background: linear-gradient(236deg, rgba(63,94,251,1) 0%, rgba(227,70,252,1) 100%);
+    margin: 20px; 
+    display: flex; 
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
